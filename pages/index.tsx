@@ -2,6 +2,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import BrandList from '../components/BrandList';
+import PinnedCars from '../components/PinnedCars';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -19,6 +21,8 @@ const Home: React.FC = () => {
             Discover the best cars available in the market.
           </Typography>
         </Box>
+        <BrandList />
+        <PinnedCars />
       </Container>
       <Footer />
     </div>
