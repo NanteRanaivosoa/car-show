@@ -7,7 +7,8 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Carousel from 'react-material-ui-carousel';
-import { Paper, Button } from '@mui/material';
+import { Paper } from '@mui/material';
+import AppointmentForm from '../../components/AppointmentForm';
 
 const car = {
   name: "Toyota Corolla",
@@ -63,9 +64,7 @@ const CarInfo: React.FC = () => {
             <Typography>Type: {car.type}</Typography>
           </Box>
           <Box my={2}>
-            <Button variant="contained" color="primary">
-              Book an Appointment
-            </Button>
+            <AppointmentForm />
           </Box>
         </Box>
       </Container>
