@@ -10,6 +10,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import sendEmail from '../utils/sendEmail';
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -24,10 +25,14 @@ const Contact: React.FC = () => {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit: SubmitHandler<ContactFormInputs> = data => {
-    // Logique d'envoi d'email ici
-    console.log(data);
-    alert('Message sent successfully!');
+  const onSubmit: SubmitHandler<ContactFormInputs> = async (data) => {
+    try {
+      await sendEmail('admin@example.com', 'New Contact Message', `Name: ${data.name}\nEmail: ${data.email}\nMessage: ${data.message}`);
+      alert('Message sent successfully!');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to send message. Please try again later.');
+    }
   };
 
   return (
