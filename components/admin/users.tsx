@@ -2,20 +2,20 @@
 import React from 'react';
 import { List, Datagrid, TextField, EditButton, DeleteButton, Edit, SimpleForm, TextInput, Create } from 'react-admin';
 
-export const UserList = (props) => (
-  <List {...props}>
+export const UserList = () => (
+  <List>
     <Datagrid>
       <TextField source="id" />
       <TextField source="name" />
       <TextField source="email" />
-      <EditButton basePath="/users" />
-      <DeleteButton basePath="/users" />
+      <EditButton />
+      <DeleteButton />
     </Datagrid>
   </List>
 );
 
-export const UserEdit = (props) => (
-  <Edit {...props}>
+export const UserEdit = () => (
+  <Edit>
     <SimpleForm>
       <TextInput disabled source="id" />
       <TextInput source="name" />
@@ -25,8 +25,8 @@ export const UserEdit = (props) => (
   </Edit>
 );
 
-export const UserCreate = (props) => (
-  <Create {...props}>
+export const UserCreate = () => (
+  <Create>
     <SimpleForm>
       <TextInput source="name" />
       <TextInput source="email" />

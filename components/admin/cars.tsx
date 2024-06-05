@@ -2,8 +2,8 @@
 import React from 'react';
 import { List, Datagrid, TextField, EditButton, DeleteButton, Edit, SimpleForm, TextInput, Create } from 'react-admin';
 
-export const CarList = (props) => (
-  <List {...props}>
+export const CarList = () => (
+  <List>
     <Datagrid>
       <TextField source="id" />
       <TextField source="name" />
@@ -11,14 +11,14 @@ export const CarList = (props) => (
       <TextField source="model" />
       <TextField source="price" />
       <TextField source="color" />
-      <EditButton basePath="/cars" />
-      <DeleteButton basePath="/cars" />
+      <EditButton />
+      <DeleteButton />
     </Datagrid>
   </List>
 );
 
-export const CarEdit = (props) => (
-  <Edit {...props}>
+export const CarEdit = () => (
+  <Edit>
     <SimpleForm>
       <TextInput disabled source="id" />
       <TextInput source="name" />
@@ -36,8 +36,8 @@ export const CarEdit = (props) => (
   </Edit>
 );
 
-export const CarCreate = (props) => (
-  <Create {...props}>
+export const CarCreate = () => (
+  <Create>
     <SimpleForm>
       <TextInput source="name" />
       <TextInput source="description" />
